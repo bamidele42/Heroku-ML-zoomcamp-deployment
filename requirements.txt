@@ -1,0 +1,6 @@
+waitress
+pickle
+numpy
+flask
+gunicorn
+scikit-learn
