@@ -5,10 +5,10 @@ from flask import request
 from flask import jsonify
 
 dv = DictVectorizer(sparse=False)
-with open("trained_model", "rb") as f_in:
+with open('trained_model', 'rb') as f_in:
     model = pickle.load(f_in)
 
-app = Flask("Payment default")
+app = Flask('Payment default')
 
 
 @app.route('/predict', methods=['POST'])
@@ -21,15 +21,15 @@ def predict():
     payment_default = y_pred >= 0.5
 
     result = {
-        "Payment_default_probability": float(y_pred),
-        "Payment_default": bool(payment_default)
+        'Payment_default_probability': float(y_pred),
+        'Payment_default': bool(payment_default)
     }
 
     return jsonify(result)
 
-# @app.route("/test", methods=["GET"])
-# def test():
-#     return "test"
+@app.route('/test', methods=['GET'])
+def test():
+    return "test"
 
 if __name__ == '__main__':
     app.run()
