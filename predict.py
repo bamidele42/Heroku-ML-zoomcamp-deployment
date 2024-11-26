@@ -27,6 +27,9 @@ def predict():
 
     return jsonify(result)
 
+@app.route("/test", methods=["GET"])
+def test():
+    return "test"
 
 if __name__ == "__main__":
     app.run()
