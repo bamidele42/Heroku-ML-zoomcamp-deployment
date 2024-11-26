@@ -11,7 +11,7 @@ with open("trained_model", "rb") as f_in:
 app = Flask("Payment default")
 
 
-@app.route("/predict", methods=["POST"])
+@app.route('/predict', methods=['POST'])
 def predict():
     customer = request.get_json()
 
@@ -27,9 +27,9 @@ def predict():
 
     return jsonify(result)
 
-@app.route("/test", methods=["GET"])
-def test():
-    return "test"
+# @app.route("/test", methods=["GET"])
+# def test():
+#     return "test"
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run()
